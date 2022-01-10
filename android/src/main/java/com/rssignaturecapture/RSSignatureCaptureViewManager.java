@@ -101,16 +101,9 @@ public class RSSignatureCaptureViewManager extends ViewGroupManager<RSSignatureC
 
 	@ReactProp(name = PROPS_BACKGROUND_COLOR)
 	public void setPropsBackgroundColor(RSSignatureCaptureMainView view, @Nullable String color) {
-		int parsed;
-		if (color.equalsIgnoreCase("transparent")) {
-			parsed = Color.TRANSPARENT;
-		} else {
-			parsed = Color.parseColor(color);
-		}
-
 		Log.d("backgroundColor:",  ""+color);
 		if(view!=null){
-			view.getSignatureView().setBackgroundColor(parsed);
+			view.getSignatureView().setBackgroundColor(Color.parseColor(color));
 		}
 	}
 
